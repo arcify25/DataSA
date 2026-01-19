@@ -1,12 +1,13 @@
-public class rotateArray {
+public class rotateArrayStart {
     public static void rotate(int[] arr, int d) {
         int len = arr.length;
+        d = d % len;
         for (int i = 0; i < d; i++) {
-            int first = arr[0];
-            for (int j = 0; j < len - 1; j++) {
-                arr[j] = arr[j + 1];
+            int last = arr[len - 1];
+            for (int j = len - 1; j > 0; j--) {
+                arr[j] = arr[j - 1];
             }
-            arr[len - 1] = first;
+            arr[0] = last;
         }
     }
 
